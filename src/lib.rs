@@ -111,7 +111,7 @@ pub fn MaterialIconStylesheet(props: MaterialIconStylesheetProps) -> Element {
         MaterialIconVariant::SelfHosted(file) => {
             let css_content = format!(include_str!("./self-hosted-styles.css"), file);
             return rsx!{
-                dioxus::document::Style { r#"{css_content}" }
+                dioxus::document::Style { "{css_content}" }
             };
         }
         MaterialIconVariant::Regular => "https://fonts.googleapis.com/icon?family=Material+Icons",
