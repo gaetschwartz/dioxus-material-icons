@@ -109,9 +109,9 @@ pub enum MaterialIconVariant {
 pub fn MaterialIconStylesheet(props: MaterialIconStylesheetProps) -> Element {
     let href = match &props.variant {
         MaterialIconVariant::SelfHosted(file) => {
-            return rsx!(
-                style { {format!(include_str!("./self-hosted-styles.css"), file)} }
-            );
+            return rsx!{
+                style : format!(include_str!("./self-hosted-styles.css"), file)
+            };
         }
         MaterialIconVariant::Regular => "https://fonts.googleapis.com/icon?family=Material+Icons",
         MaterialIconVariant::Outlined => {
